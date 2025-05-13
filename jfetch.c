@@ -118,6 +118,12 @@ void fetch_desktop_name(char *desktop_name) {
     if (desktop && session) {
         snprintf(desktop_name, BUFFERSIZE, "%s (%s)", desktop, session);
     }
+    else if(desktop) {
+        snprintf(desktop_name, BUFFERSIZE, "%s (Unknown)", desktop);
+    }
+    else if(session) {
+        snprintf(desktop_name, BUFFERSIZE, "Unknown (%s)", session);
+    }
 }
 
 void fetch_shell_name(char *shell_name) {
